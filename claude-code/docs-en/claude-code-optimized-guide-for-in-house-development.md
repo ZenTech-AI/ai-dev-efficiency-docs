@@ -1,14 +1,14 @@
 # Claude Code Implementation Guide Optimized for In-House Development Style
 
-This document provides a guide for implementing Claude Code to maximize individual programmer productivity and efficiency.
+This document introduces a guide for implementing Claude Code to maximize individual programmer productivity and efficiency.
 ※Repository/leader-level recommended settings will be introduced separately.
 
 # Purpose & Background
 
-- Purpose: To achieve development efficiency by using Agentic tools like Claude Code and reduce implementation workload.
-- Target: Members who want to improve development efficiency using Claude Code
-- This document establishes the in-house standards for Agentic Coding using Claude Code.
-- To respect individual development styles, we document the "core" principles here while keeping "peripheral" aspects as recommendations.
+- **Purpose**: To achieve development efficiency using Agentic tools like Claude Code and reduce implementation (coding) workload
+- **Target**: Members who want to improve development efficiency using Claude Code
+- Documents the in-house standards for Agentic Coding using Claude Code
+- To respect each member's development style, we document the "core" principles while keeping "peripheral" aspects as recommendations
 
 # Quickstart
 
@@ -68,86 +68,120 @@ claude mcp add -s user --transport http github-server https://api.githubcopilot.
 TBD
 
 Once the setup is complete, let's try using it. We introduce practical examples in the Example section below, so please try them locally first and customize them according to your individual development style.
+Before showing the examples, we'll document our approach to organizational AI-driven development efficiency.
 
 # Configuration Explanation and Organizational Development Approach
 
 ## Development Context Enhancement
 
-The goal is to achieve safe and fast development.
-
-**When executing tasks, whether developed by humans or AI, three types of context exist:**
+**When executing tasks, whether by humans or AI, three types of context are required:**
 
 1. **Task Content**
-   1. Task purpose & background
-   2. What should be done and what should not be done
-   3. AC (Acceptance Criteria)
+   - Task purpose & background
+   - What should be done and what should not be done
+   - AC (Acceptance Criteria)
 2. **Development Project-Specific Context**
-   1. Current file structure & code
-   2. Programming language & framework
+   - Current file structure & code
+   - Programming language & framework
 3. **General Technical Knowledge**
-   1. Architecture best practices
-   2. Readable code coding skills
+   - Architecture best practices
+   - Readable coding skills
 
 When these are lacking:
 
-- Specifications don't match the output
-- Leads to bugs and incidents
+- Output differs from specifications
+- Bugs and incidents occur
 - Communication costs increase
 
-Previously, it was common to proceed with development based on knowledge implicitly shared among team members. It was possible to cover context organization without dedicating resources to it through communication via Slack or synchronous meetings.
+Previously, development proceeded based on implicitly shared knowledge among team members. Context organization could be covered without dedicated resources through Slack or synchronous meetings.
 
-However, with AI-driven development becoming mainstream, **"human coding speed < AI coding speed"** has become the reality. Even now, dedicating resources to context sharing may yield better performance, and we predict this trend will accelerate.
+However, with AI-driven development becoming mainstream, **"human coding speed < AI coding speed"** is now reality. Investing resources in context sharing likely improves performance, and this trend is predicted to accelerate.
 
-Humans will focus on:
+Humans will optimize development speed by focusing on:
 
-- Context organization to pass to AI
+- Design that prevents bugs and is understandable by both AI and humans
+- Organizing context for AI
 - Code review & testing
 
-to optimize development speed.
+## Fusion of AI and Software Engineering
+
+### Can Everything Be Left to AI?
+
+Yes and no. When developing with AI, there are two patterns:
+
+- Working alongside AI
+- Delegating to AI
+
+#### Two Modes of Collaboration with AI
+
+**● Working alongside AI**
+- Serial development through dialogue with AI
+- Coding speed is slower (compared to "delegating to AI")
+- High degree of control and situational awareness
+- Traditional: Deterministic but doesn't scale due to human limitations
+
+**● Delegating to AI**
+- Parallel development by autonomous AIs
+- Overwhelmingly fast code generation speed
+- Lower degree of control and situational awareness, review becomes a challenge
+- Emerging: Non-deterministic with probabilistic results but highly scalable
+
+These patterns must be used appropriately.
+
+### Which AI to Use for Which Domain
+
+![Screenshot 2025-07-07 0 20 06](https://github.com/user-attachments/assets/fc94a7c1-0523-4c64-b7cf-c6d11922c159)
+
+Selection must be appropriate based on task nature.
+
+### Reference
+
+https://speakerdeck.com/twada/agentic-software-engineering-findy-2025-07-edition
 
 ## Respecting Individual Development Styles and Business Development Efficiency
 
-As a premise, we want to respect individual development styles. For example, some members use IDEs while others prefer Vim.
+As a premise, we respect individual development styles. Some members use IDEs while others prefer Vim.
 
-In most cases, the premise of accessing information necessary for development and proceeding with development based on that information is common. Specifically:
+However, the basics of accessing necessary development information and proceeding based on that information are common:
 
-- Check task content issued in Jira
+- Check task content in Jira
 - Check designs in Figma
-- Check current implementation from codebase
+- Check current codebase
 - Implement, test, and verify operation
-- Create branch, commit, and create PR when implementation is complete
+- Create branch, commit, and create PR
 - Request and conduct code review
 
-These are basic workflows that all development members perform in common. These operations don't depend on individual development styles and are considered basic operations. Even if these basic operations are automated, they won't affect development styles in most cases.
+These are basic workflows common to all members. These are fundamental operations independent of individual development styles, and automation has limited impact on development styles.
 
-Additionally, AI tools like Claude Code and Cursor are changing programmers' development processes daily. We believe it's necessary to adapt to this trend for organizational and business development.
+AI tools like Claude Code and Cursor are evolving development processes daily. As an organization and business, we need to adapt to these changes.
 
 ## Purpose of Organizational Development Efficiency
 
-With the development of AI development tools like Claude Code and Cursor, we predict the following trends:
+With the advancement of AI development tools like Claude Code and Cursor, the following trends are predicted:
 
-(1) AI development tools will improve in accuracy, increasing the proportion of coding work replaced by AI
-(2) Customers will start proposing "prices assuming AI use" and order amounts will decrease
+1. Improved AI tool accuracy will increase the proportion of AI-replaced coding work
+2. Customers will propose "AI-assumed pricing," reducing order amounts
 
-In this trend, we need to maintain organizational competitiveness and adapt member skill sets to the AI era.
+Within this trend, we must maintain organizational competitiveness and adapt member skill sets to the AI era.
 
 ## Future Approach to AI Development Tools
 
-We believe AI development tools will continue to emerge.
-We want to keep up with these developments and promote organizational development efficiency.
+New AI development tools will continue to emerge.
+We will continuously catch up and promote organizational development efficiency.
 
-Let's be flexible and change without clinging to current methods.
+Let's adapt flexibly without clinging to current methods.
+While it's impossible to perfectly predict how AI and development will evolve, we will build optimal development systems for each era.
 
 # Example
 
-Here we introduce actual development flows using Claude Code. Please use this as a base and customize it according to your development style.
+We'll introduce actual development flows using Claude Code. Use this as a base and customize according to your individual development style.
 
 ## (1) Issue a Task in Jira
 
-In most cases, task content is described in Jira.
-Basically, there are no restrictions on task content or format to be described in Jira, but it's good to describe specifically. Especially describing "Figma URL" is convenient for integration with Figma MCP during development.
+In most cases, task content is documented in Jira.
+While there are no specific restrictions on task content or format, we recommend specific descriptions. Including "Figma URL" is particularly convenient for Figma MCP integration during development.
 
-The following shows the basic format:
+Basic format example:
 
 ```
 Background & Purpose
@@ -164,35 +198,36 @@ Reference
 
 ## (2) Transfer Implementation Specifications from Jira to Github Issue
 
-Use Claude Code Command to transfer content described in Jira to Github Issue.
+Use Claude Code Command to transfer Jira content to Github Issue.
 
 ### Reasons for Using Github Issues
 
-#### Reason (0): Jira MCP is unstable
+#### Reason 0: Jira MCP Instability
 
-- In some environments, errors may occur when using Jira MCP.
-- The author encountered this several times, and while it resolves over time, instability is felt.
+- Some environments experience errors with Jira MCP
+- While issues resolve over time, instability remains a concern
 
-#### **Reason (1): Claude Code has the functionality to read Issue content and create PRs**
+#### Reason 1: Claude Code's Issue Integration Features
 
-- Let's actively utilize this functionality.
+- Can utilize the ability to read Issue content and create PRs
 
 [Claude Code GitHub Actions - Anthropic](https://docs.anthropic.com/ja/docs/claude-code/github-actions)
 
-#### **Reason (2): Role separation - Jira for immediate task creation | Github Issue as development specification document**
+#### Reason 2: Clear Role Separation
 
-- Use Jira as a place to casually write tasks.
-- Use Github Issue as a place to describe development specifications including code context.
+- Jira: Place to casually document tasks
+- Github Issue: Development specification documentation with code context
 
-#### Reason (3): To serve as context for code generation
+#### Reason 3: Safe Context Management
 
-- We felt it was risky for AI to directly write to Jira.
-- PM writes specifications in Jira → Programmer expands specifications using AI → If this expansion target is Jira, problems may occur when previous information is lost or unintended output occurs.
-  - With Issues, it's a new data source, so flexible modification or deletion is possible as needed.
+- AI writing directly to Jira poses risks
+- PM writes specs in Jira → Programmer expands specs with AI → Expansion to Jira risks information loss
+- Issues serve as new data sources, allowing flexible modification and deletion
 
-#### Reason (4): To visualize to other members and enable review
+#### Reason 4: Transparency and Reviewability
 
-- By inserting a development planning stage in Issues before tackling complex tasks, we achieve safe and fast development.
+- Complex tasks visualize development planning in Issues
+- Achieves safe and fast development
 
 ### Create a Command for Claude Code to Create Github Issues
 
@@ -248,23 +283,23 @@ This task will properly design ZZZ and implement it following the project's nami
 
 ### Usage
 
-Open claude and execute the command as follows:
+Open claude and execute the following command:
 
 ```
 > /create-issue {Paste Jira content or task overview here}
 ```
 
-This will generate development specifications from Jira content and create Issues. An example Issue is below.
+This generates development specifications from Jira content and creates Issues. Example Issue:
 
 ![Screenshot 2025-07-06 0 34 47](https://github.com/user-attachments/assets/097aadc6-9c89-4899-a50b-84024994ab09)
 
-If the content differs from intention, have Claude Code modify it or edit the Issue yourself.
+If content differs from intention, request Claude Code modifications or edit the Issue yourself.
 
 ## (3) Pair Programming with Claude Code | Leave it to Claude Code Actions
 
-### Use Claude Code to execute tasks in an orchestrated manner
+### Use Claude Code to Execute Tasks in an Orchestrated Manner
 
-This setting allows complex tasks to be analyzed and decomposed step by step, with parallel execution of subtasks. You can review results at each step and flexibly adjust plans.
+This configuration enables step-by-step analysis and decomposition of complex tasks with parallel subtask execution. Results can be reviewed at each step with flexible plan adjustments.
 
 Edit .claude/commands/orchestrator.md as follows:
 
@@ -358,9 +393,9 @@ After Step 2: "Found critical architectural issue"
 Adapted Plan: Step 1 → Step 2 → New Step 2.5 (analyze architecture) → Modified Step 3
 ```
 
-### For Pair Programming
+### For Pair Programming (Working Alongside)
 
-Use Claude Code to read Issue information via Github MCP and proceed with implementation. Launch Claude and pass the Issue URL for implementation.
+Use Claude Code to read Issue information via Github MCP while proceeding with implementation. Launch Claude and pass the Issue URL for implementation request:
 
 ```
 > /orchestrator Please proceed with implementation of https://github.com/ZenTech-AI/ai-dev-tools/issues/4
@@ -368,7 +403,7 @@ Use Claude Code to read Issue information via Github MCP and proceed with implem
 
 ### When Using Claude Code Actions
 
-Input the following in comments of the created Issue and execute on Github Actions.
+Input the following in the created Issue comment and execute on Github Actions:
 
 ```
 @claude Implement and create PR.
@@ -376,7 +411,7 @@ Input the following in comments of the created Issue and execute on Github Actio
 
 ## (4) Create Branch, git add & commit, and Create PR
 
-Use Claude Command to create branch, git add code changes, commit, and create PR in one go.
+Use Claude Command to execute branch creation, git add code changes, commit, and PR creation in one command.
 
 Add the following to .claude/commands/git-add-commit-create-pr.md:
 
@@ -429,7 +464,7 @@ This implementation adds ZZZ functionality, enhancing extensibility and maintain
 {Other additional items, related materials, reference materials, etc.}
 ```
 
-The following command checks current implementation and handles commit at appropriate granularity and PR creation:
+The following command checks current implementation and executes commit at appropriate granularity through PR creation:
 
 ```
 > /git-add-commit-create-pr
@@ -437,7 +472,7 @@ The following command checks current implementation and handles commit at approp
 
 ## (5) Human Review & Claude Code Review
 
-※This might be better set when the repository is created.
+※Recommended to set this when creating the repository.
 
 Configure claude.yml as follows:
 
@@ -456,19 +491,20 @@ Configure claude.yml as follows:
       - Always reply in Japanese.
 ```
 
-Next, describe review perspectives in docs/README.md:
+Next, document review perspectives in docs/README.md:
 
 ```
 # Code Review Guidelines
-Using LLM to review **code generated by AI and new members**, with the purpose of:
-- **Preventing destructive changes and degradation**
+Using LLM to review **code generated by AI and new members** to achieve:
+- **Prevention of destructive changes and degradation**
 - **Early detection of bugs and security flaws**
-- **Maintaining/improving code quality with high maintainability and safety**
-LLM will receive prompts including this guideline, and comments must be labeled with **"MUST / WANT / FYI / NITS"**.
+- **Maintenance and improvement of code quality with high maintainability and safety**
+
+LLM will receive prompts including these guidelines, and comments must be labeled with **"MUST / WANT / FYI / NITS"**.
 
 ## Review Points
 
-> ▶ Listing check items under each perspective with *MUST / WANT / FYI / NITS* makes it easier for LLM to return priority-based comments automatically.
+> Documenting check items under each perspective with *MUST / WANT / FYI / NITS* enables LLM to automatically return priority-based comments.
 
 ### 1. Specification & Functional Validity
 - **MUST**: Do code behaviors match specifications and user stories?
