@@ -130,7 +130,7 @@ These patterns must be used appropriately.
 
 ### Which AI to Use for Which Domain
 
-![Screenshot 2025-07-07 0 20 06](https://github.com/user-attachments/assets/fc94a7c1-0523-4c64-b7cf-c6d11922c159)
+![ChatGPT Image 2025年7月7日 00_47_54](https://github.com/user-attachments/assets/4ed79374-ad91-4b72-b4a8-11a71c1f0077)
 
 Selection must be appropriate based on task nature.
 
