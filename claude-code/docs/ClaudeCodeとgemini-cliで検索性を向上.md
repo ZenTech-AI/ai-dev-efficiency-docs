@@ -36,6 +36,7 @@ When web search is needed, you MUST use `gemini --prompt` via Task Tool.
 Run web search via Task Tool with `gemini --prompt 'WebSearch: <query>'`
 
 Run
+
 gemini --prompt "WebSearch: <query>"
 ```
 
