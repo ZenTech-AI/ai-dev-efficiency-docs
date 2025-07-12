@@ -67,6 +67,23 @@ claude mcp add -s user --transport http github-server https://api.githubcopilot.
 
 TBD
 
+### Context7 MCP
+
+An MCP server that provides the latest and version-specific code documentation.
+
+```
+claude mcp add -s user --transport sse context7 https://mcp.context7.com/sse
+```
+
+To ensure constant availability, it might be good to add something to `~/.claude/CLAUDE.md`.
+Example:
+
+```
+MUST: Always use context7 in any kind of design, planning, or implementation task.
+```
+
+https://github.com/upstash/context7
+
 Once the setup is complete, let's try using it. We introduce practical examples in the Example section below, so please try them locally first and customize them according to your individual development style.
 Before showing the examples, we'll document our approach to organizational AI-driven development efficiency.
 
